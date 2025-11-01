@@ -66,12 +66,12 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-secondary-900 to-background">
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-secondary-900 to-background min-h-screen flex items-center">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40 lg:py-60 xl:py-72">
           <div className="text-center">
             <AnimatedSection animation="fadeIn" duration={1} delay={0.2}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-foreground mb-8">
                 Moderne Websites &{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
                   Web Apps
@@ -79,7 +79,7 @@ export default function Home() {
               </h1>
             </AnimatedSection>
             <AnimatedSection animation="fadeIn" duration={0.8} delay={0.4}>
-              <p className="text-xl md:text-2xl text-secondary-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl lg:text-3xl text-secondary-300 mb-12 max-w-4xl mx-auto leading-relaxed">
                 Van WordPress websites tot complexe Next.js applicaties. 
                 Wij bouwen digitale oplossingen die je bedrijf laten groeien.
               </p>
@@ -88,31 +88,31 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   href="/contact"
-                  className="bg-primary-500 hover:bg-primary-600 text-background px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center space-x-2 group"
+                  className="bg-primary-500 hover:bg-primary-600 text-background px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-200 flex items-center space-x-3 group shadow-lg hover:shadow-xl"
                 >
                   <span>Plan Gratis Consult</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
                 </Link>
                 <Link
                   href="/cases"
-                  className="border border-border hover:border-primary-500 text-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200"
+                  className="border-2 border-border hover:border-primary-500 text-foreground px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-200 hover:bg-primary-500 hover:text-background"
                 >
                   Bekijk Ons Werk
                 </Link>
               </div>
             </AnimatedSection>
             <AnimatedSection animation="stagger" duration={0.6} delay={0.8} stagger={0.2}>
-              <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-secondary-400">
-                <div className="flex items-center space-x-2">
-                  <Users size={20} />
+              <div className="mt-16 flex flex-wrap justify-center items-center gap-12 text-secondary-400">
+                <div className="flex items-center space-x-3 text-lg">
+                  <Users size={24} />
                   <span>50+ Tevreden Klanten</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Zap size={20} />
+                <div className="flex items-center space-x-3 text-lg">
+                  <Zap size={24} />
                   <span>Gemiddeld 2 Weken Oplevering</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Star size={20} />
+                <div className="flex items-center space-x-3 text-lg">
+                  <Star size={24} />
                   <span>4.9/5 Klantbeoordeling</span>
                 </div>
               </div>

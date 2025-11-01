@@ -46,21 +46,19 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm' 
-        : 'bg-transparent'
+        ? 'bg-white/80 backdrop-blur-xl border-b border-gray-200/50' 
+        : 'bg-white/80 backdrop-blur-xl'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-              <span className="text-background font-bold text-sm">LA</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
+              <span className="text-white font-semibold text-sm">LA</span>
             </div>
-            <span className={`text-xl font-semibold transition-colors duration-300 ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
+            <span className="text-xl font-medium text-black">
               LA Webdesign
             </span>
           </Link>
@@ -71,18 +69,14 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`transition-colors duration-200 font-medium ${
-                  isScrolled 
-                    ? 'text-gray-600 hover:text-primary-600' 
-                    : 'text-gray-200 hover:text-white'
-                }`}
+                className="text-gray-600 hover:text-black transition-colors duration-300 font-medium"
               >
                 {item.label}
               </Link>
             ))}
             <Link
               href="/contact"
-              className="bg-primary-500 hover:bg-primary-600 text-background px-6 py-2 rounded-lg font-medium transition-colors duration-200"
+              className="bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md"
             >
               Gratis Consult
             </Link>
@@ -91,11 +85,7 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden transition-colors duration-200 ${
-              isScrolled 
-                ? 'text-gray-600 hover:text-gray-900' 
-                : 'text-gray-200 hover:text-white'
-            }`}
+            className="md:hidden text-gray-600 hover:text-black transition-colors duration-300"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

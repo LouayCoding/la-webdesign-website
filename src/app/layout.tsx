@@ -44,9 +44,9 @@ export default function RootLayout({
         <StructuredData data={structuredDataGenerators.localBusiness()} />
         <StructuredData data={structuredDataGenerators.website()} />
       </head>
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body className="font-sans antialiased bg-white text-black">
         <Navigation />
-        <main className="min-h-screen pt-16">
+        <main className="min-h-screen pt-20">
           {children}
         </main>
         <Footer />

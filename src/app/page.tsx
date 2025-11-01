@@ -66,110 +66,106 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-secondary-900 to-background min-h-screen flex items-center">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-40 lg:py-60 xl:py-72">
-          <div className="text-center">
-            <AnimatedSection animation="fadeIn" duration={1} delay={0.2}>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-foreground mb-8">
-                Moderne Websites &{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">
-                  Web Apps
-                </span>
-              </h1>
-            </AnimatedSection>
-            <AnimatedSection animation="fadeIn" duration={0.8} delay={0.4}>
-              <p className="text-xl md:text-2xl lg:text-3xl text-secondary-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Van WordPress websites tot complexe Next.js applicaties. 
-                Wij bouwen digitale oplossingen die je bedrijf laten groeien.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection animation="slideUp" duration={0.8} delay={0.6}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link
-                  href="/contact"
-                  className="bg-primary-500 hover:bg-primary-600 text-background px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-200 flex items-center space-x-3 group shadow-lg hover:shadow-xl"
-                >
-                  <span>Plan Gratis Consult</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={24} />
-                </Link>
-                <Link
-                  href="/cases"
-                  className="border-2 border-border hover:border-primary-500 text-foreground px-10 py-5 rounded-xl font-semibold text-xl transition-all duration-200 hover:bg-primary-500 hover:text-background"
-                >
-                  Bekijk Ons Werk
-                </Link>
+      <section className="relative bg-white min-h-screen flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white"></div>
+        <div className="relative max-w-6xl mx-auto px-6 lg:px-8 py-32 text-center">
+          <AnimatedSection animation="fadeIn" duration={1} delay={0.2}>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-black mb-6 tracking-tight">
+              Moderne{' '}
+              <span className="font-medium">Websites</span>
+            </h1>
+          </AnimatedSection>
+          <AnimatedSection animation="fadeIn" duration={0.8} delay={0.4}>
+            <p className="text-2xl md:text-3xl text-gray-600 mb-16 max-w-4xl mx-auto font-light leading-relaxed">
+              Van WordPress tot Next.js. Wij bouwen digitale ervaringen 
+              die je bedrijf laten groeien.
+            </p>
+          </AnimatedSection>
+          <AnimatedSection animation="slideUp" duration={0.8} delay={0.6}>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+              <Link
+                href="/contact"
+                className="bg-black hover:bg-gray-900 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 flex items-center space-x-2 group shadow-lg hover:shadow-xl"
+              >
+                <span>Plan Gratis Consult</span>
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              </Link>
+              <Link
+                href="/cases"
+                className="text-black hover:text-gray-600 px-8 py-4 font-medium text-lg transition-colors duration-300 underline decoration-2 underline-offset-4"
+              >
+                Bekijk Ons Werk
+              </Link>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection animation="stagger" duration={0.6} delay={0.8} stagger={0.2}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="p-6">
+                <div className="text-4xl font-light text-black mb-2">50+</div>
+                <div className="text-gray-600 font-medium">Tevreden Klanten</div>
               </div>
-            </AnimatedSection>
-            <AnimatedSection animation="stagger" duration={0.6} delay={0.8} stagger={0.2}>
-              <div className="mt-16 flex flex-wrap justify-center items-center gap-12 text-secondary-400">
-                <div className="flex items-center space-x-3 text-lg">
-                  <Users size={24} />
-                  <span>50+ Tevreden Klanten</span>
-                </div>
-                <div className="flex items-center space-x-3 text-lg">
-                  <Zap size={24} />
-                  <span>Gemiddeld 2 Weken Oplevering</span>
-                </div>
-                <div className="flex items-center space-x-3 text-lg">
-                  <Star size={24} />
-                  <span>4.9/5 Klantbeoordeling</span>
-                </div>
+              <div className="p-6">
+                <div className="text-4xl font-light text-black mb-2">2 weken</div>
+                <div className="text-gray-600 font-medium">Gemiddelde Oplevering</div>
               </div>
-            </AnimatedSection>
-          </div>
+              <div className="p-6">
+                <div className="text-4xl font-light text-black mb-2">4.9★</div>
+                <div className="text-gray-600 font-medium">Klantbeoordeling</div>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-secondary-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection animation="fadeIn" className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Onze Diensten
+      <section className="py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimatedSection animation="fadeIn" className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-light text-black mb-6 tracking-tight">
+              Onze <span className="font-medium">Diensten</span>
             </h2>
-            <p className="text-xl text-secondary-300 max-w-2xl mx-auto">
-              Wij bieden een breed scala aan webdevelopment diensten, 
-              van eenvoudige websites tot complexe web applicaties.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
+              Van eenvoudige websites tot complexe applicaties. 
+              Elke oplossing op maat gemaakt voor jouw bedrijf.
             </p>
           </AnimatedSection>
           
           <AnimatedSection animation="stagger" stagger={0.2}>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (
                   <div
                     key={index}
-                    className="bg-background border border-border rounded-xl p-8 hover:border-primary-500 transition-all duration-300 group"
+                    className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all duration-500 group border border-gray-100"
                   >
-                    <div className="mb-6">
-                      <div className="w-12 h-12 bg-primary-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-500/20 transition-colors">
-                        <Icon className="text-primary-400" size={24} />
+                    <div className="mb-8">
+                      <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-black group-hover:text-white transition-all duration-300">
+                        <Icon size={28} />
                       </div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                      <h3 className="text-2xl font-medium text-black mb-4">
                         {service.title}
                       </h3>
-                      <p className="text-secondary-300 mb-4">
+                      <p className="text-gray-600 mb-6 leading-relaxed">
                         {service.description}
                       </p>
                     </div>
                     
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-3 mb-8">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center space-x-2 text-secondary-300">
-                          <CheckCircle size={16} className="text-primary-400" />
-                          <span>{feature}</span>
+                        <li key={idx} className="flex items-center space-x-3 text-gray-700">
+                          <div className="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></div>
+                          <span className="font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     
                     <Link
                       href={service.href}
-                      className="text-primary-400 hover:text-primary-300 font-medium flex items-center space-x-2 group-hover:translate-x-1 transition-transform"
+                      className="text-black hover:text-gray-600 font-medium flex items-center space-x-2 group-hover:translate-x-1 transition-all duration-300 underline decoration-2 underline-offset-4"
                     >
                       <span>Meer informatie</span>
-                      <ArrowRight size={16} />
+                      <ArrowRight size={18} />
                     </Link>
                   </div>
                 );

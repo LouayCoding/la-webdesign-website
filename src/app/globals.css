@@ -14,9 +14,9 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-lexend);
+  background: #121212;
+  color: #ffffff;
+  font-family: 'Lexend', system-ui, sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,26 +28,26 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--muted);
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--secondary);
+  background: #404040;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+  background: #737373;
 }
 
 /* Selection styling */
 ::selection {
-  background: var(--primary);
-  color: var(--background);
+  background: #ffffff;
+  color: #121212;
 }
 
 /* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }

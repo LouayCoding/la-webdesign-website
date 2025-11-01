@@ -1,156 +1,149 @@
 # LA Webdesign Website
 
-Een moderne, professionele website voor LA Webdesign gebouwd met Next.js 15, TypeScript, Tailwind CSS en GSAP animaties.
+Modern, Apple/Vercel-inspired website for LA Webdesign - a web development agency specializing in WordPress, Next.js, and mobile applications.
 
 ## 🚀 Features
 
-- **Modern Tech Stack**: Next.js 15, TypeScript, Tailwind CSS
-- **Responsive Design**: Werkt perfect op alle apparaten
-- **SEO Geoptimaliseerd**: Sitemap, robots.txt, structured data
-- **GSAP Animaties**: Vloeiende scroll-triggered animaties
-- **Blog Systeem**: MDX ondersteuning voor content management
-- **Case Studies**: Dynamische portfolio pagina's
-- **Contact Formulier**: Met API route voor form handling
-- **Performance**: Geoptimaliseerd voor snelheid en Core Web Vitals
+- **Modern Design**: Clean, minimalist Apple/Vercel-inspired aesthetic
+- **Performance**: Built with Next.js 15 and optimized for speed
+- **Animations**: Smooth GSAP animations with scroll triggers
+- **SEO Optimized**: Complete SEO setup with structured data
+- **Responsive**: Mobile-first design that works on all devices
+- **Type Safe**: Full TypeScript implementation
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS v3
 - **Animations**: GSAP (GreenSock)
 - **Icons**: Lucide React
+- **Content**: MDX for blog posts and case studies
 - **Font**: Lexend (Google Fonts)
-- **Deployment**: Vercel (recommended)
 
 ## 📁 Project Structure
 
 ```
 src/
 ├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes
-│   ├── blog/              # Blog pages
-│   ├── cases/             # Case study pages
-│   ├── contact/           # Contact page
+│   ├── blog/              # Blog system with MDX
+│   ├── cases/             # Case studies
 │   ├── diensten/          # Services pages
-│   └── over-ons/          # About page
-├── components/            # Reusable components
-├── data/                  # Static data (blog, cases)
+│   ├── contact/           # Contact page
+│   └── api/               # API routes
+├── components/            # Reusable React components
+├── data/                  # Static data (blog posts, cases)
 ├── hooks/                 # Custom React hooks
 └── lib/                   # Utility functions
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/la-webdesign-website.git
-cd la-webdesign-website
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## 📝 Content Management
-
-### Blog Posts
-
-Blog posts are managed in `src/data/blog.ts`. To add a new post:
-
-1. Add a new entry to the `blogPosts` array
-2. Include title, excerpt, content, author, publishedAt, etc.
-3. The content supports markdown formatting
-
-### Case Studies
-
-Case studies are managed in `src/data/cases.ts`. To add a new case:
-
-1. Add a new entry to the `caseStudies` array
-2. Include all required fields like title, client, technologies, etc.
-3. Set `featured: true` for homepage highlights
-
-## 🎨 Customization
+## 🎨 Design System
 
 ### Colors
+- **Background**: Pure white (#ffffff)
+- **Text**: Black (#000000)
+- **Secondary**: Gray scale (50-950)
+- **Accents**: High contrast black/white
 
-Update colors in `tailwind.config.ts`:
+### Typography
+- **Font**: Lexend (300, 400, 500, 600, 700)
+- **Hierarchy**: Light weights for headers, medium for accents
+- **Spacing**: Generous whitespace following Apple guidelines
 
-```typescript
-colors: {
-  primary: { /* your primary colors */ },
-  secondary: { /* your secondary colors */ },
-  // ...
-}
-```
+### Components
+- **Cards**: Rounded corners (rounded-3xl), subtle shadows
+- **Buttons**: Rounded-full, smooth transitions
+- **Navigation**: Glassmorphism with backdrop-blur
 
-### Animations
+## 🚀 Getting Started
 
-GSAP animations are configured in `src/lib/gsap.ts`. Use the `AnimatedSection` component for scroll-triggered animations:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/LouayCoding/la-webdesign-website.git
+   cd la-webdesign-website
+   ```
 
-```tsx
-<AnimatedSection animation="fadeIn" duration={0.8}>
-  <YourContent />
-</AnimatedSection>
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## 📧 Contact Form
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-The contact form uses a Next.js API route (`/api/contact`). To enable email sending:
+4. **Open in browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-1. Choose an email service (Resend, SendGrid, etc.)
-2. Add your API key to environment variables
-3. Update the API route in `src/app/api/contact/route.ts`
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript checks
+
+## 🎯 Key Pages
+
+- **Homepage**: Hero section, services overview, testimonials
+- **Services**: WordPress, Next.js, and Mobile App development
+- **Cases**: Portfolio of completed projects
+- **Blog**: Technical articles and insights
+- **Contact**: Lead generation form with consultation booking
+
+## 🔧 Configuration
+
+### Tailwind CSS
+Custom configuration with Apple-inspired design tokens in `tailwind.config.ts`
+
+### GSAP Animations
+- Scroll-triggered animations
+- Page transitions
+- Hover effects
+- Dynamic imports for SSR compatibility
+
+### SEO
+- Structured data (JSON-LD)
+- Dynamic sitemap generation
+- Optimized meta tags
+- Open Graph support
+
+## 📱 Responsive Design
+
+- **Mobile First**: Optimized for mobile devices
+- **Breakpoints**: sm (640px), md (768px), lg (1024px), xl (1280px)
+- **Touch Friendly**: Large tap targets, smooth interactions
+
+## 🎨 Animation System
+
+Custom `AnimatedSection` component with GSAP integration:
+- Fade in effects
+- Slide animations
+- Stagger animations
+- Scroll triggers
+
+## 📊 Performance
+
+- **Core Web Vitals**: Optimized for excellent scores
+- **Image Optimization**: Next.js Image component
+- **Code Splitting**: Automatic route-based splitting
+- **Bundle Analysis**: Optimized bundle size
+
+## 🔒 SEO & Analytics
+
+- **Structured Data**: Organization, LocalBusiness, Website schemas
+- **Meta Tags**: Complete OpenGraph and Twitter Card support
+- **Sitemap**: Dynamically generated XML sitemap
+- **Robots.txt**: Search engine crawling configuration
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically on every push
-
-### Other Platforms
-
-The project can be deployed to any platform that supports Next.js:
-
-- Netlify
-- Railway
-- DigitalOcean App Platform
-- AWS Amplify
-
-## 📊 SEO Features
-
-- Automatic sitemap generation (`/sitemap.xml`)
-- Robots.txt configuration
-- Structured data (JSON-LD) for better search visibility
-- Open Graph and Twitter Card meta tags
-- Optimized meta descriptions and titles
-
-## 🔧 Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run type-check   # Run TypeScript checks
-```
+Ready for deployment on:
+- **Vercel** (recommended)
+- **Netlify**
+- **GitHub Pages**
+- Any Node.js hosting provider
 
 ## 📄 License
 
@@ -158,14 +151,7 @@ This project is private and proprietary to LA Webdesign.
 
 ## 🤝 Contributing
 
-This is a private project. For any changes or improvements, please contact the development team.
-
-## 📞 Support
-
-For technical support or questions about this website:
-
-- Email: info@lawebdesign.nl
-- Phone: +31 6 12345678
+This is a private project for LA Webdesign. For any questions or suggestions, please contact the development team.
 
 ---
 

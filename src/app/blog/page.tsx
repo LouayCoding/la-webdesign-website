@@ -27,31 +27,29 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-secondary-900 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Onze <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">Blog</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-secondary-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Ontdek de laatste trends in webdesign, development tips en inzichten 
-              die je helpen om betere digitale ervaringen te creëren.
-            </p>
-          </div>
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-black mb-6 sm:mb-8 tracking-tight">
+            Onze <span className="font-medium">Blog</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
+            Ontdek de laatste trends in webdesign, development tips en inzichten 
+            die je helpen om betere digitale ervaringen te creëren.
+          </p>
         </div>
       </section>
 
       {/* Categories Filter */}
-      <section className="py-8 bg-secondary-900/50 sticky top-16 z-40 backdrop-blur-sm">
+      <section className="py-6 bg-gray-50 sticky top-20 z-40 backdrop-blur-xl border-b border-gray-200/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-6 py-2 bg-primary-500 text-background rounded-lg font-medium transition-colors duration-200">
+          <div className="flex flex-wrap justify-center gap-3">
+            <button className="px-6 py-2 bg-black text-white rounded-full font-medium transition-all duration-300 shadow-sm">
               Alle Artikelen
             </button>
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-6 py-2 border border-border hover:border-primary-500 text-secondary-300 hover:text-foreground rounded-lg font-medium transition-all duration-200"
+                className="px-6 py-2 border border-gray-200 hover:border-black text-gray-600 hover:text-black rounded-full font-medium transition-all duration-300 bg-white hover:bg-gray-50"
               >
                 {category}
               </button>
@@ -62,26 +60,28 @@ export default function BlogPage() {
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
-        <section className="py-20">
+        <section className="py-20 sm:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Uitgelichte Artikelen</h2>
-              <p className="text-xl text-secondary-300">Onze meest populaire en actuele content</p>
+            <div className="mb-16 sm:mb-20 text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black mb-4 sm:mb-6 tracking-tight">
+                Uitgelichte <span className="font-medium">Artikelen</span>
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 font-light leading-relaxed">Onze meest populaire en actuele content</p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {featuredPosts.map((post, index) => (
                 <article
                   key={post.slug}
-                  className={`bg-background border border-border rounded-xl overflow-hidden hover:border-primary-500 transition-all duration-300 group ${
+                  className={`bg-white border border-gray-100 rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-lg transition-all duration-500 group shadow-sm ${
                     index === 0 ? 'lg:col-span-2' : ''
                   }`}
                 >
                   {/* Image */}
-                  <div className={`bg-gradient-to-br from-primary-500/20 to-accent-500/20 flex items-center justify-center ${
+                  <div className={`bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center ${
                     index === 0 ? 'aspect-[2/1]' : 'aspect-video'
                   }`}>
-                    <div className="text-6xl opacity-30">📝</div>
+                    <div className="text-4xl sm:text-6xl opacity-30">📝</div>
                   </div>
                   
                   {/* Content */}

@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -13,6 +14,7 @@ const config: Config = {
         foreground: "#000000",
         border: "#e5e5e5",
         muted: "#f5f5f5",
+        // Dark mode colors will be handled via CSS variables
         primary: {
           50: "#ffffff",
           100: "#fafafa",

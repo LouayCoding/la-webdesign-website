@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import StructuredData, { structuredDataGenerators } from "@/components/StructuredData";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const lexend = Lexend({
   variable: "--font-lexend",
@@ -44,12 +45,14 @@ export default function RootLayout({
         <StructuredData data={structuredDataGenerators.localBusiness()} />
         <StructuredData data={structuredDataGenerators.website()} />
       </head>
-      <body className="font-sans antialiased bg-white text-black">
-        <Navigation />
-        <main className="min-h-screen pt-20">
-          {children}
-        </main>
-        <Footer />
+      <body className="font-sans antialiased">
+        <ThemeProvider>
+          <Navigation />
+          <main className="min-h-screen pt-20">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

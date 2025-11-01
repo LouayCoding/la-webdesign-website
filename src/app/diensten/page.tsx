@@ -123,61 +123,59 @@ export default function DienstenPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-secondary-900 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Onze <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">Diensten</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-secondary-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Van eenvoudige WordPress websites tot complexe web applicaties en mobiele apps. 
-              Wij bieden de perfecte digitale oplossing voor jouw bedrijf.
-            </p>
-          </div>
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-black mb-6 sm:mb-8 tracking-tight">
+            Onze <span className="font-medium">Diensten</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto font-light leading-relaxed">
+            Van eenvoudige WordPress websites tot complexe web applicaties en mobiele apps. 
+            Wij bieden de perfecte digitale oplossing voor jouw bedrijf.
+          </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section className="py-20 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
+          <div className="grid grid-cols-1 gap-8 lg:gap-12">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className="bg-background border border-border rounded-2xl p-8 lg:p-12 hover:border-primary-500 transition-all duration-300"
+                  className="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 hover:shadow-lg transition-all duration-500 shadow-sm"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Left Column - Info */}
                     <div>
-                      <div className="flex items-center mb-6">
-                        <div className="w-16 h-16 bg-primary-500/10 rounded-xl flex items-center justify-center mr-4">
-                          <Icon className="text-primary-400" size={32} />
+                      <div className="flex items-center mb-6 sm:mb-8">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-100 rounded-2xl flex items-center justify-center mr-4 sm:mr-6">
+                          <Icon className="text-gray-600" size={32} />
                         </div>
                         <div>
-                          <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
+                          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-black">
                             {service.title}
                           </h2>
                           <div className="flex items-center space-x-4 mt-2">
-                            <span className="text-primary-400 font-semibold">{service.price}</span>
-                            <span className="text-secondary-400">•</span>
-                            <span className="text-secondary-400">{service.duration}</span>
+                            <span className="text-black font-semibold">{service.price}</span>
+                            <span className="text-gray-400">•</span>
+                            <span className="text-gray-600">{service.duration}</span>
                           </div>
                         </div>
                       </div>
                       
-                      <p className="text-lg text-secondary-300 mb-6 leading-relaxed">
+                      <p className="text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed font-light">
                         {service.description}
                       </p>
                       
-                      <div className="mb-8">
-                        <h3 className="text-lg font-semibold text-foreground mb-4">Ideaal voor:</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="mb-6 sm:mb-8">
+                        <h3 className="text-lg font-medium text-black mb-4">Ideaal voor:</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {service.ideal.map((item, idx) => (
-                            <div key={idx} className="flex items-center space-x-2 text-secondary-300">
-                              <CheckCircle size={16} className="text-primary-400 flex-shrink-0" />
-                              <span>{item}</span>
+                            <div key={idx} className="flex items-center space-x-3 text-gray-700">
+                              <div className="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></div>
+                              <span className="font-medium">{item}</span>
                             </div>
                           ))}
                         </div>
@@ -185,7 +183,7 @@ export default function DienstenPage() {
                       
                       <Link
                         href={service.href}
-                        className="inline-flex items-center space-x-2 bg-primary-500 hover:bg-primary-600 text-background px-6 py-3 rounded-lg font-semibold transition-colors duration-200 group"
+                        className="inline-flex items-center space-x-2 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 group shadow-lg hover:shadow-xl"
                       >
                         <span>Meer informatie</span>
                         <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
@@ -194,12 +192,12 @@ export default function DienstenPage() {
                     
                     {/* Right Column - Features */}
                     <div>
-                      <h3 className="text-lg font-semibold text-foreground mb-6">Wat je krijgt:</h3>
+                      <h3 className="text-lg font-medium text-black mb-6">Wat je krijgt:</h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center space-x-3 text-secondary-300">
-                            <CheckCircle size={16} className="text-primary-400 flex-shrink-0" />
-                            <span>{feature}</span>
+                          <div key={idx} className="flex items-center space-x-3 text-gray-700">
+                            <div className="w-1.5 h-1.5 bg-black rounded-full flex-shrink-0"></div>
+                            <span className="font-medium">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -213,13 +211,13 @@ export default function DienstenPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-secondary-900/50">
+      <section className="py-20 sm:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ons Werkproces
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black mb-4 sm:mb-6 tracking-tight">
+              Ons <span className="font-medium">Werkproces</span>
             </h2>
-            <p className="text-xl text-secondary-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
               Van eerste gesprek tot succesvolle lancering. 
               Zo werken wij samen aan jouw digitale succes.
             </p>
@@ -228,13 +226,13 @@ export default function DienstenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary-500 text-background rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                <div className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-xl font-semibold mx-auto mb-4">
                   {step.step}
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-medium text-black mb-2">
                   {step.title}
                 </h3>
-                <p className="text-secondary-300 text-sm">
+                <p className="text-gray-600 text-sm font-light leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -244,11 +242,11 @@ export default function DienstenPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20">
+      <section className="py-20 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Waarom Kiezen voor LA Webdesign?
+          <div className="text-center mb-16 sm:mb-20">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-black mb-4 sm:mb-6 tracking-tight">
+              Waarom Kiezen voor <span className="font-medium">LA Webdesign?</span>
             </h2>
           </div>
           
@@ -257,13 +255,13 @@ export default function DienstenPage() {
               const Icon = benefit.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-primary-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <Icon className="text-primary-400" size={24} />
+                  <div className="w-16 h-16 bg-white border border-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+                    <Icon className="text-gray-600" size={24} />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                  <h3 className="text-lg font-medium text-black mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-secondary-300">
+                  <p className="text-gray-600 font-light leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -274,17 +272,17 @@ export default function DienstenPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-accent-600">
+      <section className="py-20 sm:py-32 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Klaar om te Beginnen?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">
+            Klaar om te <span className="font-medium">Beginnen?</span>
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 mb-10 sm:mb-12 max-w-3xl mx-auto font-light leading-relaxed">
             Plan een gratis consult en ontdek welke dienst het beste bij jouw bedrijf past.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center space-x-2 bg-white hover:bg-gray-100 text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
+            className="inline-flex items-center space-x-2 bg-white hover:bg-gray-100 text-black px-6 sm:px-8 py-4 rounded-full font-medium text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <span>Plan Gratis Consult</span>
             <ArrowRight size={20} />

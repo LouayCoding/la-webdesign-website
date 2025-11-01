@@ -168,28 +168,26 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-secondary-900 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Plan je <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-accent-400">Gratis Consult</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-secondary-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Vertel ons over je project en ontdek hoe wij jouw bedrijf kunnen helpen groeien 
-              met een professionele website, web app of mobiele applicatie.
-            </p>
-          </div>
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-black mb-6 sm:mb-8 tracking-tight">
+            Plan je <span className="font-medium">Gratis Consult</span>
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto font-light leading-relaxed">
+            Vertel ons over je project en ontdek hoe wij jouw bedrijf kunnen helpen groeien 
+            met een professionele website, web app of mobiele applicatie.
+          </p>
         </div>
       </section>
 
       {/* Contact Form & Info */}
-      <section className="py-20">
+      <section className="py-20 sm:py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-background border border-border rounded-2xl p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">
+              <div className="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm">
+                <h2 className="text-2xl sm:text-3xl font-medium text-black mb-6 sm:mb-8">
                   Vertel ons over je Project
                 </h2>
                 
@@ -211,9 +209,9 @@ export default function ContactPage() {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Personal Info */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-black mb-2">
                         Naam *
                       </label>
                       <input
@@ -223,12 +221,12 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground"
+                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black transition-all duration-200 min-h-[48px]"
                         placeholder="Je volledige naam"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
                         Email *
                       </label>
                       <input
@@ -238,15 +236,15 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground"
+                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black transition-all duration-200 min-h-[48px]"
                         placeholder="je@email.nl"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="phone" className="block text-sm font-medium text-black mb-2">
                         Telefoon
                       </label>
                       <input
@@ -255,12 +253,12 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground"
+                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black transition-all duration-200 min-h-[48px]"
                         placeholder="+31 6 12345678"
                       />
                     </div>
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="company" className="block text-sm font-medium text-black mb-2">
                         Bedrijf
                       </label>
                       <input
@@ -269,7 +267,7 @@ export default function ContactPage() {
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground"
+                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black transition-all duration-200 min-h-[48px]"
                         placeholder="Je bedrijfsnaam"
                       />
                     </div>
@@ -277,7 +275,7 @@ export default function ContactPage() {
 
                   {/* Project Details */}
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="service" className="block text-sm font-medium text-black mb-2">
                       Type Project *
                     </label>
                     <select
@@ -286,7 +284,7 @@ export default function ContactPage() {
                       required
                       value={formData.service}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black transition-all duration-200 min-h-[48px]"
                     >
                       <option value="">Selecteer een service</option>
                       {services.map((service) => (
@@ -295,9 +293,9 @@ export default function ContactPage() {
                     </select>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label htmlFor="budget" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="budget" className="block text-sm font-medium text-black mb-2">
                         Budget
                       </label>
                       <select
@@ -305,7 +303,7 @@ export default function ContactPage() {
                         name="budget"
                         value={formData.budget}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground"
+                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black transition-all duration-200 min-h-[48px]"
                       >
                         <option value="">Selecteer budget</option>
                         {budgets.map((budget) => (
@@ -314,7 +312,7 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="timeline" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="timeline" className="block text-sm font-medium text-black mb-2">
                         Gewenste Timeline
                       </label>
                       <select
@@ -322,7 +320,7 @@ export default function ContactPage() {
                         name="timeline"
                         value={formData.timeline}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground"
+                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black transition-all duration-200 min-h-[48px]"
                       >
                         <option value="">Selecteer timeline</option>
                         {timelines.map((timeline) => (
@@ -333,7 +331,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium text-black mb-2">
                       Projectomschrijving *
                     </label>
                     <textarea
@@ -343,7 +341,7 @@ export default function ContactPage() {
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-secondary-900 border border-border rounded-lg focus:outline-none focus:border-primary-500 text-foreground resize-vertical"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black text-black resize-vertical transition-all duration-200"
                       placeholder="Vertel ons over je project, doelen en specifieke wensen..."
                     />
                   </div>
@@ -351,7 +349,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status.type === 'loading'}
-                    className="w-full bg-primary-500 hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed text-background px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                    className="w-full bg-black hover:bg-gray-900 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl min-h-[56px]"
                   >
                     {status.type === 'loading' ? (
                       <>
@@ -370,10 +368,10 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info & FAQ */}
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {/* Contact Information */}
-              <div className="bg-background border border-border rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-foreground mb-6">
+              <div className="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm">
+                <h3 className="text-xl sm:text-2xl font-medium text-black mb-6">
                   Contact Informatie
                 </h3>
                 <div className="space-y-4">
@@ -381,20 +379,20 @@ export default function ContactPage() {
                     const Icon = info.icon;
                     return (
                       <div key={index} className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-primary-500/10 rounded-lg flex items-center justify-center">
-                          <Icon className="text-primary-400" size={18} />
+                        <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
+                          <Icon className="text-gray-600" size={20} />
                         </div>
                         <div>
-                          <div className="text-sm text-secondary-400">{info.title}</div>
+                          <div className="text-sm text-gray-500 font-medium">{info.title}</div>
                           {info.link && info.link !== '#' ? (
                             <a
                               href={info.link}
-                              className="text-foreground hover:text-primary-400 transition-colors"
+                              className="text-black hover:text-gray-600 transition-colors font-medium"
                             >
                               {info.value}
                             </a>
                           ) : (
-                            <div className="text-foreground">{info.value}</div>
+                            <div className="text-black font-medium">{info.value}</div>
                           )}
                         </div>
                       </div>
@@ -404,17 +402,17 @@ export default function ContactPage() {
               </div>
 
               {/* Quick FAQ */}
-              <div className="bg-background border border-border rounded-2xl p-8">
-                <h3 className="text-xl font-semibold text-foreground mb-6">
+              <div className="bg-white border border-gray-100 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm">
+                <h3 className="text-xl sm:text-2xl font-medium text-black mb-6">
                   Veelgestelde Vragen
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {faqs.map((faq, index) => (
                     <div key={index}>
-                      <h4 className="text-sm font-medium text-foreground mb-2">
+                      <h4 className="text-base font-medium text-black mb-2">
                         {faq.question}
                       </h4>
-                      <p className="text-sm text-secondary-300">
+                      <p className="text-sm text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -427,25 +425,25 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-secondary-900/50">
+      <section className="py-20 sm:py-32 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Liever Direct Contact?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-white mb-6 tracking-tight">
+            Liever <span className="font-medium">Direct Contact?</span>
           </h2>
-          <p className="text-xl text-secondary-300 mb-8">
+          <p className="text-lg sm:text-xl text-gray-300 mb-10 sm:mb-12 font-light leading-relaxed">
             Bel ons voor een snelle vraag of om direct een afspraak in te plannen.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <a
               href="tel:+31612345678"
-              className="bg-primary-500 hover:bg-primary-600 text-background px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+              className="bg-white hover:bg-gray-100 text-black px-6 sm:px-8 py-4 rounded-full font-medium text-base sm:text-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl min-h-[48px]"
             >
               <Phone size={20} />
               <span>+31 6 12345678</span>
             </a>
             <a
               href="mailto:info@lawebdesign.nl"
-              className="border border-border hover:border-primary-500 text-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 flex items-center justify-center space-x-2"
+              className="border-2 border-white hover:bg-white hover:text-black text-white px-6 sm:px-8 py-4 rounded-full font-medium text-base sm:text-lg transition-all duration-300 flex items-center justify-center space-x-2 min-h-[48px]"
             >
               <Mail size={20} />
               <span>info@lawebdesign.nl</span>

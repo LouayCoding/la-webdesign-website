@@ -1,11 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Code, Smartphone, Globe } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { href: '/', label: 'Home' },
@@ -35,7 +46,11 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm' 
+        : 'bg-transparent'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -43,7 +58,9 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
               <span className="text-background font-bold text-sm">LA</span>
             </div>
-            <span className="text-xl font-semibold text-foreground">
+            <span className={`text-xl font-semibold transition-colors duration-300 ${
+              isScrolled ? 'text-gray-900' : 'text-white'
+            }`}>
               LA Webdesign
             </span>
           </Link>
@@ -54,7 +71,11 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 font-medium"
+                className={`transition-colors duration-200 font-medium ${
+                  isScrolled 
+                    ? 'text-gray-600 hover:text-primary-600' 
+                    : 'text-gray-200 hover:text-white'
+                }`}
               >
                 {item.label}
               </Link>
@@ -70,7 +91,11 @@ const Navigation = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-secondary-300 hover:text-foreground transition-colors"
+            className={`md:hidden transition-colors duration-200 ${
+              isScrolled 
+                ? 'text-gray-600 hover:text-gray-900' 
+                : 'text-gray-200 hover:text-white'
+            }`}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -79,12 +104,20 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
+            <div className={`px-2 pt-2 pb-3 space-y-1 border-t transition-colors duration-300 ${
+              isScrolled 
+                ? 'bg-white border-gray-200' 
+                : 'bg-gray-900/95 backdrop-blur-sm border-gray-700'
+            }`}>
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block px-3 py-2 text-secondary-300 hover:text-primary-400 transition-colors duration-200"
+                  className={`block px-3 py-2 transition-colors duration-200 ${
+                    isScrolled 
+                      ? 'text-gray-600 hover:text-primary-600' 
+                      : 'text-gray-300 hover:text-white'
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -93,14 +126,20 @@ const Navigation = () => {
               
               {/* Services submenu */}
               <div className="px-3 py-2">
-                <p className="text-sm font-medium text-secondary-400 mb-2">Diensten</p>
+                <p className={`text-sm font-medium mb-2 ${
+                  isScrolled ? 'text-gray-500' : 'text-gray-400'
+                }`}>Diensten</p>
                 {services.map((service) => {
                   const Icon = service.icon;
                   return (
                     <Link
                       key={service.href}
                       href={service.href}
-                      className="flex items-center space-x-2 px-3 py-2 text-secondary-300 hover:text-primary-400 transition-colors duration-200"
+                      className={`flex items-center space-x-2 px-3 py-2 transition-colors duration-200 ${
+                        isScrolled 
+                          ? 'text-gray-600 hover:text-primary-600' 
+                          : 'text-gray-300 hover:text-white'
+                      }`}
                       onClick={() => setIsOpen(false)}
                     >
                       <Icon size={16} />

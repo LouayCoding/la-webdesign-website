@@ -38,13 +38,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl" className={lexend.variable}>
+    <html lang="nl">
       <head>
         <StructuredData data={structuredDataGenerators.organization()} />
         <StructuredData data={structuredDataGenerators.localBusiness()} />
         <StructuredData data={structuredDataGenerators.website()} />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-background text-foreground">
         <Navigation />
         <main className="min-h-screen pt-16">
           {children}

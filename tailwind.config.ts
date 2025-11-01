@@ -9,8 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "#0a0a0a",
+        foreground: "#ededed",
+        border: "#334155",
+        muted: "#1e293b",
         primary: {
           50: "#f0f9ff",
           100: "#e0f2fe",
@@ -52,8 +54,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-lexend)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        sans: ["Lexend", "system-ui", "sans-serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "monospace"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

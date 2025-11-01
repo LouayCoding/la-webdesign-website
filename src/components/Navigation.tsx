@@ -94,20 +94,12 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className={`px-2 pt-2 pb-3 space-y-1 border-t transition-colors duration-300 ${
-              isScrolled 
-                ? 'bg-white border-gray-200' 
-                : 'bg-gray-900/95 backdrop-blur-sm border-gray-700'
-            }`}>
+            <div className="bg-white/95 backdrop-blur-xl border-t border-gray-200/50 px-4 py-6 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block px-3 py-2 transition-colors duration-200 ${
-                    isScrolled 
-                      ? 'text-gray-600 hover:text-primary-600' 
-                      : 'text-gray-300 hover:text-white'
-                  }`}
+                  className="block px-4 py-4 text-gray-600 hover:text-black hover:bg-gray-50 rounded-xl font-medium transition-all duration-300 min-h-[44px] flex items-center"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
@@ -115,37 +107,37 @@ const Navigation = () => {
               ))}
               
               {/* Services submenu */}
-              <div className="px-3 py-2">
-                <p className={`text-sm font-medium mb-2 ${
-                  isScrolled ? 'text-gray-500' : 'text-gray-400'
-                }`}>Diensten</p>
-                {services.map((service) => {
-                  const Icon = service.icon;
-                  return (
-                    <Link
-                      key={service.href}
-                      href={service.href}
-                      className={`flex items-center space-x-2 px-3 py-2 transition-colors duration-200 ${
-                        isScrolled 
-                          ? 'text-gray-600 hover:text-primary-600' 
-                          : 'text-gray-300 hover:text-white'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <Icon size={16} />
-                      <span>{service.label}</span>
-                    </Link>
-                  );
-                })}
+              <div className="pt-4 border-t border-gray-100 mt-4">
+                <p className="text-sm font-medium mb-3 text-gray-500 px-4 uppercase tracking-wide">
+                  Diensten
+                </p>
+                <div className="space-y-1">
+                  {services.map((service) => {
+                    const Icon = service.icon;
+                    return (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="flex items-center space-x-3 px-4 py-4 text-gray-600 hover:text-black hover:bg-gray-50 rounded-xl font-medium transition-all duration-300 min-h-[44px]"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <Icon size={20} />
+                        <span>{service.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
 
-              <Link
-                href="/contact"
-                className="block mx-3 mt-4 bg-primary-500 hover:bg-primary-600 text-background px-6 py-2 rounded-lg font-medium text-center transition-colors duration-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Gratis Consult
-              </Link>
+              <div className="pt-6 border-t border-gray-100 mt-6">
+                <Link
+                  href="/contact"
+                  className="block bg-black hover:bg-gray-900 text-white px-6 py-4 rounded-full font-medium text-center transition-all duration-300 shadow-lg hover:shadow-xl min-h-[44px] flex items-center justify-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Gratis Consult
+                </Link>
+              </div>
             </div>
           </div>
         )}

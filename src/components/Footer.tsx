@@ -24,20 +24,20 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary-900 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-white border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
-                <span className="text-background font-bold text-sm">LA</span>
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
+                <span className="text-white font-semibold text-sm">LA</span>
               </div>
-              <span className="text-xl font-semibold text-foreground">
+              <span className="text-xl font-medium text-black">
                 LA Webdesign
               </span>
             </Link>
-            <p className="text-secondary-300 text-sm leading-relaxed">
+            <p className="text-gray-600 text-sm leading-relaxed font-light">
               Professionele webdesign en ontwikkeling voor moderne bedrijven. 
               Van WordPress websites tot complexe web applicaties.
             </p>
@@ -48,7 +48,7 @@ const Footer = () => {
                   <a
                     key={social.label}
                     href={social.href}
-                    className="text-secondary-400 hover:text-primary-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-black transition-colors duration-300 p-2 rounded-lg hover:bg-gray-50"
                     aria-label={social.label}
                   >
                     <Icon size={20} />
@@ -60,13 +60,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Diensten</h3>
-            <ul className="space-y-2">
+            <h3 className="text-black font-medium mb-6">Diensten</h3>
+            <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
                     href={service.href}
-                    className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 text-sm"
+                    className="text-gray-600 hover:text-black transition-colors duration-300 text-sm font-light"
                   >
                     {service.label}
                   </Link>
@@ -77,13 +77,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Bedrijf</h3>
-            <ul className="space-y-2">
+            <h3 className="text-black font-medium mb-6">Bedrijf</h3>
+            <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-secondary-300 hover:text-primary-400 transition-colors duration-200 text-sm"
+                    className="text-gray-600 hover:text-black transition-colors duration-300 text-sm font-light"
                   >
                     {item.label}
                   </Link>
@@ -94,24 +94,24 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-foreground font-semibold mb-4">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-secondary-300 text-sm">
-                <Mail size={16} className="text-primary-400" />
-                <span>info@lawebdesign.nl</span>
+            <h3 className="text-black font-medium mb-6">Contact</h3>
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3 text-gray-600 text-sm">
+                <Mail size={16} className="text-gray-400" />
+                <span className="font-light">info@lawebdesign.nl</span>
               </div>
-              <div className="flex items-center space-x-3 text-secondary-300 text-sm">
-                <Phone size={16} className="text-primary-400" />
-                <span>+31 6 12345678</span>
+              <div className="flex items-center space-x-3 text-gray-600 text-sm">
+                <Phone size={16} className="text-gray-400" />
+                <span className="font-light">+31 6 12345678</span>
               </div>
-              <div className="flex items-center space-x-3 text-secondary-300 text-sm">
-                <MapPin size={16} className="text-primary-400" />
-                <span>Amsterdam, Nederland</span>
+              <div className="flex items-center space-x-3 text-gray-600 text-sm">
+                <MapPin size={16} className="text-gray-400" />
+                <span className="font-light">Amsterdam, Nederland</span>
               </div>
             </div>
             <Link
               href="/contact"
-              className="inline-block mt-4 bg-primary-500 hover:bg-primary-600 text-background px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+              className="inline-block mt-6 bg-black hover:bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-sm hover:shadow-md"
             >
               Plan Gratis Consult
             </Link>
@@ -119,21 +119,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-secondary-400 text-sm">
+        <div className="mt-16 pt-8 border-t border-gray-200">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-sm font-light">
               © {currentYear} LA Webdesign. Alle rechten voorbehouden.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex space-x-8">
               <Link
                 href="/privacy"
-                className="text-secondary-400 hover:text-primary-400 transition-colors duration-200 text-sm"
+                className="text-gray-500 hover:text-black transition-colors duration-300 text-sm font-light"
               >
                 Privacy Beleid
               </Link>
               <Link
                 href="/algemene-voorwaarden"
-                className="text-secondary-400 hover:text-primary-400 transition-colors duration-200 text-sm"
+                className="text-gray-500 hover:text-black transition-colors duration-300 text-sm font-light"
               >
                 Algemene Voorwaarden
               </Link>
